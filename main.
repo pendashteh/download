@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+function run() {
+  local url=$1
+  local datadir=$(app_datadir)
+  git add -A
+  git commit -m"cleans up before new download."
+  cd $datadir && download $url
+  git add -A
+  git commit -m"Download complete for $url"
+}
+
+function download {
+  local url=$1
+  wget --mirror --convert-links --adjust-extension --page-requisites $url
+}
