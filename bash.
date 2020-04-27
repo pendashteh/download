@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+function run() {
+  (cd $(app_datadir) && bash)
+}
