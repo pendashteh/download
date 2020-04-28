@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+function run() {
+  git log -n1 --name-only
+}
+
