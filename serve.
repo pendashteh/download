@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+function run() {
+  local port=${1:-5000}
+  local datadir=$(app_datadir)
+  echo 'Starting http://127.0.0.1:'$port
+  cd $datadir && python -m SimpleHTTPServer $port
+}
+
