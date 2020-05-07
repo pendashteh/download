@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+function run() {
+  local url=$1
+  shift
+  local datadir=$(app_datadir)
+  git reset HEAD --hard
+  cd $datadir && download $url $@
+  git add -A
+  git commit -m"Download complete in single mode for $url"
+}
+
+function download {
+  local url=$1
+  shift
+  wget --convert-links --span-host --adjust-extension --page-requisites $@ $url
+}
