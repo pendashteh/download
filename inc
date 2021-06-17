@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function app_datadir() {
-    echo "$HOME/downloads/data"
+    echo "$HOME/download/data"
 }
 
 function app_boot() {
